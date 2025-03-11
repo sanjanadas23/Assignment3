@@ -7,19 +7,19 @@ public class Cell {
         this.mark = MarkType.E;
     }
 
+    public boolean isEmpty() {
+        return mark == MarkType.E;
+    }
+
     public MarkType getMark() {
         return mark;
     }
 
     public void setMark(MarkType mark) throws Exception {
-        if (this.mark != MarkType.E) {
-            throw new Exception("Cell is already occupied!");
+        if (!isEmpty()) {
+            throw new Exception("Cell is already marked!");
         }
         this.mark = mark;
-    }
-
-    public void reset() {
-        this.mark = MarkType.E;
     }
 
 }
